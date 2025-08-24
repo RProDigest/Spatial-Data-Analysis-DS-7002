@@ -185,12 +185,19 @@ result_wgs84 <- st_transform(result_m, 4326)
 
 # 12.0 Optional: write GeoPackage for GIS use-----
 
-# st_write(result_wgs84,
-#          "longacres_buildings_ge_1000m2_gt_250m_from_highways.gpkg",
-#          layer = "qualified_buildings", delete_dsn = TRUE)
+ st_write(result_wgs84,
+          "longacres_buildings_ge_1000m2_gt_250m_from_highways.gpkg",
+          layer = "qualified_buildings", delete_dsn = TRUE)
 
 
-# 13.0 Plot visual  ----
+# 13.0 Plot and save visual  ----
+
+png("longacres_buildings_map.png",
+    width  = 9,       # width in inches
+    height = 6,       # height in inches
+    units  = "in",
+    res    = 900)     # resolution (dots per inch)
+
 
 if (interactive()) {
   plot(st_geometry(parcels_m),
@@ -218,6 +225,9 @@ if (interactive()) {
          bty    = "n")
 }
 
+
+# --- close device to write file ---
+dev.off()
 
 # 14.0 Final object----
 
