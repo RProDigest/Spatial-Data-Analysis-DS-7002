@@ -19,7 +19,7 @@ Make sure you have R (≥4.2) installed.
 The script installs missing packages automatically, but you can also install them manually:
 
 ```r
-install.packages(c("osmdata", "sf", "dplyr", "purrr", "stringr", "glue", "units"))
+install.packages(c("osmdata", "sf", "tidyverse", "glue", "units"))
 ```
 
 ---
@@ -63,7 +63,7 @@ The base R plot shows:
 To save as a **900 dpi PNG**:
 
 ```r
-png("longacres_buildings_map.png", width=6, height=6, units="in", res=900)
+png("longacres_buildings_map.png", width=9, height=6, units="in", res=900)
 # plotting code runs here...
 dev.off()
 ```
@@ -75,14 +75,14 @@ dev.off()
 Clone the repo and run in R/RStudio:
 
 ```bash
-git clone https://github.com/yourusername/longacres-building-analysis.git
-cd longacres-building-analysis
+git clone https://github.com/RProDigest/Spatial-Data-Analysis-DS-7002.git
+cd Spatial-Data-Analysis-DS-7002/Week2
 ```
 
 Then in R:
 
 ```r
-source("longacres_building_analysis.R")
+source("Lusaka_OSM.R")
 ```
 
 ---
