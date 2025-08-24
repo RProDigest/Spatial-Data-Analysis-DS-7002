@@ -186,7 +186,7 @@ result_wgs84 <- st_transform(result_m, 4326)
 # 12.0 Optional: write GeoPackage for GIS use-----
 
  st_write(result_wgs84,
-          "longacres_buildings_ge_1000m2_gt_250m_from_highways.gpkg",
+          "longacres_buildings.gpkg",
           layer = "qualified_buildings", delete_dsn = TRUE)
 
 
